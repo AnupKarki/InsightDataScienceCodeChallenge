@@ -1,3 +1,4 @@
+
 # example of program that calculates the average degree of hashtags
 import os,sys,json
 import datetime
@@ -60,3 +61,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
