@@ -13,9 +13,11 @@ def writingToFile(target,string,date):
     
 
 def main():
-    BasePath = os.path.dirname(os.getcwd())
-    inputFile = os.path.join(BasePath,'tweet_input','tweets.txt')
-    outputFile_featureOne = os.path.join(BasePath,'tweet_output','ft1.txt')
+    #BasePath = os.path.dirname(os.getcwd())
+    #inputFile = os.path.join(BasePath,'tweet_input','tweets.txt')
+    #outputFile_featureOne = os.path.join(BasePath,'tweet_output','ft1.txt')
+    inputFile = sys.argv[1]
+    outputFile_featureOne = sys.argv[2]
     target = open(outputFile_featureOne,'w')
     unicodeCounter = 0
     with open(inputFile) as data_file:
