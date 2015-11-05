@@ -1,4 +1,4 @@
-#!bin/sh
+#!bin/bash
 chmod a+x ./src/average_degree.py
 chmod a+x ./src/tweets_cleaned.py
 
