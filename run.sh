@@ -2,10 +2,10 @@
 chmod a+x ./src/average_degree.py
 chmod a+x ./src/tweets_cleaned.py
 
-# open word count program
+# open average degree caalucations
 python ./src/average_degree.py 
 	
-# open median count program
+# open tweet cleaner
 python ./src/tweets_cleaned.py 
 	
     
