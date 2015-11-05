@@ -32,10 +32,12 @@ def getHashListTuple(listofHashs):
         
 
 def main():
-    BasePath = os.path.dirname(os.getcwd())
-    inputFile = os.path.join(BasePath,'tweet_input','tweets.txt')
-    outputFile_featureOne = os.path.join(BasePath,'tweet_output','ft2.txt')
-    target = open(outputFile_featureOne,'w')
+    #BasePath = os.path.dirname(os.getcwd())
+    #inputFile = os.path.join(BasePath,'tweet_input','tweets.txt')
+    #outputFile_featureOne = os.path.join(BasePath,'tweet_output','ft2.txt')
+    inputFile = sys.argv[1]
+    outputFile_featureTwo = sys.argv[2]
+    target = open(outputFile_featureTwo,'w')
     hashList = []
     with open(inputFile) as data_file:
             for line in data_file:
