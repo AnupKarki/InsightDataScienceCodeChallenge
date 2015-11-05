@@ -9,7 +9,7 @@ def calculateAverage(hashList):
     #### takes the hash list and returns the average of the within the list
     totalConnectionList = []    
     for hashs in hashList:
-        hashtags = [hashValues.lower() for hashValues in hashs['hashTag']] ## convert all the hashtags to lower case 
+        hashtags = [hashValues for hashValues in hashs['hashTag']] 
         hashlistTuple = getHashListTuple(hashtags)
         totalConnectionList +=hashlistTuple
     getTupleFlatList = flatten_tuple(totalConnectionList)
@@ -40,11 +40,10 @@ def main():
     with open(inputFile) as data_file:
             for line in data_file:
                 data_unprocessed = json.loads(line)
-                if 'text' not in data_unprocessed:
-                    pass
-                else:
-                    hashtags = [word for word in data_unprocessed['text'].split() if "#" in word]
-                    if len(hashtags) > 1:         ### don't process if only single hastag is present
+                if 'entities' in data_unprocessed:
+                    hashTags = data_unprocessed['entities']['hashtags']
+                    if len(hashTags) > 1:         ### don't process if only single hastag is present
+                        hashtags = [hashs['text'].lower() for hashs in hashTags]                   
                         hashList.append({'hashTag':hashtags,'date':data_unprocessed['created_at']})
                         lastDate = parser.parse(hashList[-1]['date'])
                         for hashTags in hashList:
